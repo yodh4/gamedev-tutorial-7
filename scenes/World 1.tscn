@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://bovojbs81knfi"]
+
+[ext_resource type="PackedScene" uid="uid://c2n4w22h270e6" path="res://scenes/ObjLamp.tscn" id="1_jmvhw"]
+
+[node name="World 1" type="Node3D"]
+
+[node name="ObjLamp" parent="." instance=ExtResource("1_jmvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96296, -1.56727, 14.829)
+
+[node name="ObjLamp2" parent="." instance=ExtResource("1_jmvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94838, -1.56727, 14.829)
+
+[node name="ObjLamp3" parent="." instance=ExtResource("1_jmvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96266, -1.56727, -6.58363)
+
+[node name="ObjLamp4" parent="." instance=ExtResource("1_jmvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9565, -1.56727, -2.62878)
+
+[node name="ObjLamp5" parent="." instance=ExtResource("1_jmvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9109, -1.56727, -6.5488)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Room 1" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(7.582, 0, 0, 0, 3.506, 0, 0, 0, 3.53, 0, 1.95415, 4.44872)
+use_collision = true
+flip_faces = true
+size = Vector3(1, 2.11475, 6.58127)
+
+[node name="CSGBox1" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-3.06854e-08, 0, -14.041, 0, 3.506, 0, 0.702, 0, -6.13752e-07, 10.7167, 1.93521, -4.37949)
+flip_faces = true
+size = Vector3(7.97534, 2.10394, 1)
+
+[node name="CSGBox2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-2.04389e-07, 0, -1.00101, 0, 3.47322, 0, 4.67588, 0, -4.37554e-08, 0.0138625, -3.48256, 3.69999)
+flip_faces = true
+size = Vector3(2.2168, 1, 7.51025)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(2.00013, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.29256, 0.919085)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(4.87684, 0, 0, 0, 1.19088, 0, 0, 0, 0.928311, 0.580149, -1.68999, 3.59983)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(2.62969, 0, 0, 0, 1.19088, 0, 0, 0, 0.555658, 0.580149, -2.37395, 6.95184)
+use_collision = true
+size = Vector3(1, 1, 1.90332)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00825, -0.191764, -6.54544)
+light_color = Color(0.554501, 1, 0.596698, 1)
+light_energy = 5.0
+omni_range = 50.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0467, -0.191764, -6.57571)
+light_color = Color(0.639117, 0.0889637, 0.507363, 1)
+light_energy = 5.0
+omni_range = 50.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00825, -0.260893, 14.7915)
+light_color = Color(1, 1, 0, 1)
+light_energy = 5.0
+omni_range = 50.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97261, -0.274625, 14.8452)
+light_color = Color(0.215309, 1.92523e-07, 0.9825, 1)
+light_energy = 5.0
+omni_range = 50.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0194, -0.380124, -2.64904)
+light_color = Color(0.565176, 0.209177, 0.213803, 1)
+light_energy = 5.0
+omni_range = 50.0

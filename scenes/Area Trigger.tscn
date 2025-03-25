@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd27mbip7at5h"]
+
+[ext_resource type="Script" path="res://scripts/area_trigger.gd" id="1_fwhf2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t3aaq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_lck2t"]
+
+[node name="Area Trigger" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00654578, -0.00581491, -0.00423431)
+script = ExtResource("1_fwhf2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_t3aaq")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("SphereMesh_lck2t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

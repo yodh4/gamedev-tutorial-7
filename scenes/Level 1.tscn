@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://buaqucxk3f32a"]
+
+[ext_resource type="PackedScene" uid="uid://03l4ikb8kn8j" path="res://scenes/Player.tscn" id="1_mek56"]
+[ext_resource type="PackedScene" uid="uid://bovojbs81knfi" path="res://scenes/World 1.tscn" id="2_00p4g"]
+[ext_resource type="PackedScene" uid="uid://dd27mbip7at5h" path="res://scenes/Area Trigger.tscn" id="3_mbrvq"]
+[ext_resource type="PackedScene" uid="uid://6ucm1rt6215u" path="res://scenes/Restart Area.tscn" id="4_e42hg"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_mek56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2647, 12)
+
+[node name="World 1" parent="." instance=ExtResource("2_00p4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2647, 0)
+
+[node name="Area Trigger" parent="." instance=ExtResource("3_mbrvq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4894, 4.21079, -4.40417)
+
+[node name="RestartArea" parent="." instance=ExtResource("4_e42hg")]
+transform = Transform3D(7.5692, 0, 0, 0, 0.962845, 0, 0, 0, 10.5765, 0, 0.556975, 3.60323)
+sceneName = "Level 1"
