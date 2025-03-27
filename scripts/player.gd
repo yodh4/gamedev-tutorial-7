@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var speed: float = 10.0
 @export var sprint_speed: float = 15.0
-@export var crouch_speed: float = 3.0  # Reduced speed when crouching
+@export var crouch_speed: float = 3.0
 @export var acceleration: float = 5.0
 @export var gravity: float = 9.8
 @export var jump_power: float = 5.0
@@ -28,14 +28,13 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	# Toggle crouch when "Ctrl" is pressed
 	if Input.is_action_just_pressed("crouch"):
-		if is_on_floor():  # Only allow crouching on the ground
+		if is_on_floor(): 
 			is_crouching = !is_crouching
 			if is_crouching:
-				scale.y = 0.5  # Reduce player height
+				scale.y = 0.5  
 			else:
-				scale.y = 1.0  # Restore player height
+				scale.y = 1.0  
 
 func _physics_process(delta):
 	var movement_vector = Vector3.ZERO
@@ -51,12 +50,11 @@ func _physics_process(delta):
 
 	movement_vector = movement_vector.normalized()
 
-	# Determine movement speed based on state
 	var current_speed = speed
 	if is_crouching:
-		current_speed = crouch_speed  # Reduce speed when crouching
+		current_speed = crouch_speed 
 	elif Input.is_action_pressed("sprint"):
-		current_speed = sprint_speed  # Increase speed when sprinting
+		current_speed = sprint_speed 
 
 	velocity.x = lerp(velocity.x, movement_vector.x * current_speed, acceleration * delta)
 	velocity.z = lerp(velocity.z, movement_vector.z * current_speed, acceleration * delta)
