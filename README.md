@@ -1,6 +1,6 @@
 # Proses Pengerjaan
 
-## 1. Implementasi Sprint
+## 1. Implementasi Crouch
 
 - Pertama-tama saya menambahkan variabel berikut
     ```
@@ -27,7 +27,7 @@
 
 - Terakhir saya menambahkan input map untuk tombol `ctrl` pada project settings sebagai action `crouch`
 
-## 2. Implementasi Crouch
+## 2. Implementasi Sprint
 
 - Pertama-tama saya menambahkan variabel berikut
     ```
