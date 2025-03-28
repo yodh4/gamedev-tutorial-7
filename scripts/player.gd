@@ -7,12 +7,16 @@ extends CharacterBody3D
 @export var gravity: float = 9.8
 @export var jump_power: float = 5.0
 @export var mouse_sensitivity: float = 0.3
+@export var crouch_scale: float = 0.5  
+@export var transition_speed: float = 10.0
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 
 var camera_x_rotation: float = 0.0
 var is_crouching: bool = false
+var target_scale: float = 1.0
+
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,10 +35,7 @@ func _input(event):
 	if Input.is_action_just_pressed("crouch"):
 		if is_on_floor(): 
 			is_crouching = !is_crouching
-			if is_crouching:
-				scale.y = 0.5  
-			else:
-				scale.y = 1.0  
+			target_scale = crouch_scale if is_crouching else 1.0
 
 func _physics_process(delta):
 	var movement_vector = Vector3.ZERO
@@ -66,5 +67,7 @@ func _physics_process(delta):
 	# Jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching:
 		velocity.y = jump_power
-
+	
+	scale.y = lerp(scale.y, target_scale, transition_speed * delta)
+	
 	move_and_slide()

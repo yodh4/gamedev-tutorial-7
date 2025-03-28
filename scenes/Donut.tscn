@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsc3s6k5q3104"]
+
+[ext_resource type="Script" path="res://scripts/Donut.gd" id="1_2ne2g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rsw5"]
+albedo_color = Color(0.984314, 0.654902, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_13o6l"]
+
+[node name="Donut" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_2ne2g")
+sceneName = "Win Screen"
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+sides = 32
+ring_sides = 24
+material = SubResource("StandardMaterial3D_2rsw5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.3446, -0.00351052, -0.00132315, 0.00196842, -0.00141287, 1.57414, -0.00371384, -2.21698, -0.00100112, 0, 0.00145102, -1.80038e-08)
+shape = SubResource("SphereShape3D_13o6l")

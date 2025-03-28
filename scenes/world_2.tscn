@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckf3r5brwdrpf"]
+
+[ext_resource type="PackedScene" uid="uid://c2n4w22h270e6" path="res://scenes/ObjLamp.tscn" id="1_agpwy"]
+[ext_resource type="PackedScene" uid="uid://dsc3s6k5q3104" path="res://scenes/Donut.tscn" id="2_pig4m"]
+
+[node name="World 2" type="Node3D"]
+
+[node name="BaseRoom" type="CSGBox3D" parent="."]
+transform = Transform3D(15.2878, 0, 0, 0, 7.85628, 0, 0, 0, 3.30919, 1.41177, 7.75266, -1.15454)
+use_collision = true
+flip_faces = true
+size = Vector3(1.18469, 1.99594, 3.30908)
+
+[node name="Stair" type="Node3D" parent="."]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(1.1937, 0, 0, 0, 1.55134, 0, 0, 0, 1, -6.70109, 0.261567, 1.67732)
+use_collision = true
+size = Vector3(1.56458, 0.435059, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(1.1937, 0, 0, 0, 1.55134, 0, 0, 0, 1, -6.69475, 1.06055, -1.07477)
+use_collision = true
+size = Vector3(1.56458, 0.435059, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(1.1937, 0, 0, 0, 1.55134, 0, 0, 0, 1, -6.70109, 2.02663, -4.07265)
+use_collision = true
+size = Vector3(1.56458, 0.435059, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(-5.21784e-08, 0, -1, 0, 1.55134, 0, 1.1937, 0, -4.37114e-08, -4.01359, 3.18241, -5.68187)
+use_collision = true
+size = Vector3(1.56458, 0.435059, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(-5.21784e-08, 0, -1, 0, 1.55134, 0, 1.1937, 0, -4.37114e-08, 1.76137, 4.36716, -5.34217)
+use_collision = true
+size = Vector3(2.13373, 0.435059, 5.16455)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(-1.19934, 0, 9.63423e-08, 0, 2.41802, 0, -1.15004e-07, 0, -1.19934, 8.90641, 5.08029, -2.67628)
+use_collision = true
+size = Vector3(2.60736, 0.435059, 2.06445)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(-5.21784e-08, 0, -1, 0, 1.55134, 0, 1.1937, 0, -4.37114e-08, 9.58777, 6.62402, 2.85794)
+use_collision = true
+size = Vector3(2.41412, 0.435059, 1.93018)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(-5.21784e-08, 0, -1, 0, 1.55134, 0, 1.1937, 0, -4.37114e-08, -0.860335, 9.27925, 1.6993)
+use_collision = true
+size = Vector3(4.42311, 0.435059, 8.2699)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Stair"]
+transform = Transform3D(-0.277613, 0, 9.58898e-08, 0, 2.40666, 0, -2.66203e-08, 0, -1.1937, 5.8959, 7.84162, 2.85816)
+use_collision = true
+size = Vector3(2.41412, 0.435059, 2.42157)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48821, 10.1139, 1.6654)
+use_collision = true
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0124931, 7.03636, 1.89496)
+light_color = Color(0.146701, 0.474409, 0.497992, 1)
+light_energy = 15.0
+shadow_enabled = true
+omni_range = 50.0
+
+[node name="ObjLamp" parent="Light" instance=ExtResource("1_agpwy")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 8.81365, 1.88942)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85937, 6.21605, -2.66005)
+light_color = Color(0.146701, 0.474409, 0.497992, 1)
+light_energy = 15.0
+shadow_enabled = true
+omni_range = 50.0
+
+[node name="ObjLamp2" parent="Light" instance=ExtResource("1_agpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83945, 5.72526, -2.67244)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13028, 1.33352, -0.582991)
+light_color = Color(0.146701, 0.474409, 0.497992, 1)
+light_energy = 20.0
+shadow_enabled = true
+omni_range = 50.0
+
+[node name="ObjLamp3" parent="Light" instance=ExtResource("1_agpwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14609, 0.0418433, -0.579746)
+
+[node name="Donut" parent="." instance=ExtResource("2_pig4m")]
+transform = Transform3D(-2.1165e-08, 0.484199, 0, -0.484199, -2.1165e-08, 0, 0, 0, 0.484199, -3.48762, 11.085, 1.67024)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48779, 12.188, 1.66545)
+light_color = Color(1, 0.843137, 0, 1)
+light_energy = 10.0
+omni_range = 10.0

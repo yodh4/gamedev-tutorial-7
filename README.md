@@ -5,7 +5,10 @@
 - Pertama-tama saya menambahkan variabel berikut
     ```
     @export var crouch_speed: float = 3.0
+    @export var crouch_scale: float = 0.5  
+    @export var transition_speed: float = 10.0
     var is_crouching: bool = false
+    var target_scale: float = 1.0
     ```
 
 - Selanjutnya saya menambahkan kode berikut untuk implementasi fitur `crouch`
@@ -13,10 +16,11 @@
     if Input.is_action_just_pressed("crouch"):
 		if is_on_floor(): 
 			is_crouching = !is_crouching
-			if is_crouching:
-				scale.y = 0.5  
-			else:
-				scale.y = 1.0 
+			target_scale = crouch_scale if is_crouching else 1.0
+    ```
+    Lalu di dalam function `_physics_process` saya menambahkan kode berikut
+    ```
+    scale.y = lerp(scale.y, target_scale, transition_speed * delta)
     ```
 
 - Untuk mengubah kecepatan player saat sedang di kondisi `crouch` saya menambahkan kode berikut
@@ -43,3 +47,7 @@
     ```
 
 - Terakhir saya menambahkan input map untuk tombol `shift` pada project settings sebagai action `sprint`
+
+## 3. Implementasi Level 2
+
+Untuk implementasi level 2 saya membuat world baru terlebih dahulu lalu baru mendesain world tersebut, di akhir level 2 akan terdapat interactable donut. Jika player menekan tombol `e` ke arah donut tersebut maka akan muncul tampilan `Win Screen`
